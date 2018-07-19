@@ -891,3 +891,21 @@ Processing by PostsController#edit as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 4]]
   Rendered posts/edit.html.erb within layouts/application (2.0ms)
 Completed 200 OK in 33ms (Views: 21.6ms | ActiveRecord: 1.2ms)
+
+
+Started PATCH "/posts/4" for 24.46.108.174 at 2018-07-19 11:49:52 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"q2YT7JHt2Gujck0V+feUNhwsQW6JutYR5a8CKQN/B8RYibetNEVNW8Bs2tMDXTMwvLp00Pabz/takY3fTzIoXQ==", "post"=>{"title"=>"furniture", "description"=>"1"}, "commit"=>"Update Post", "id"=>"4"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?  [["title", "furniture"], ["description", "1"], ["updated_at", "2018-07-19 11:49:52.544906"], ["id", 4]]
+  [1m[36m (3.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://192.241.157.192:36508/posts/4
+Completed 302 Found in 12ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/posts/4" for 24.46.108.174 at 2018-07-19 11:49:52 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
