@@ -909,3 +909,31 @@ Processing by PostsController#show as HTML
   Parameters: {"id"=>"4"}
   [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
   Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 20ms (Views: 17.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/4/edit" for 24.46.108.174 at 2018-07-19 11:49:57 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered posts/edit.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 26ms (Views: 24.2ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/posts/4" for 24.46.108.174 at 2018-07-19 11:50:10 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2fyneI2Apy5DBgxvKxhX/uwIpuXX8AG2JkDaQfISLxEqEwM5KCgyHiAYm6nRsvD4TJ6TW6jRGFyZflW3vl8AiA==", "post"=>{"title"=>"furniture", "description"=>"costco"}, "commit"=>"Update Post", "id"=>"4"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "posts" SET "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?  [["description", "costco"], ["updated_at", "2018-07-19 11:50:10.843587"], ["id", 4]]
+  [1m[36m (3.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://192.241.157.192:36508/posts/4
+Completed 302 Found in 9ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/posts/4" for 24.46.108.174 at 2018-07-19 11:50:10 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered posts/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 24ms (Views: 22.2ms | ActiveRecord: 0.3ms)
