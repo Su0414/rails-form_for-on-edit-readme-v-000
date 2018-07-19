@@ -883,3 +883,11 @@ Processing by PostsController#show as HTML
   [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
   Rendered posts/show.html.erb within layouts/application (0.1ms)
 Completed 200 OK in 18ms (Views: 16.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/4/edit" for 24.46.108.174 at 2018-07-19 11:49:38 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered posts/edit.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 33ms (Views: 21.6ms | ActiveRecord: 1.2ms)
